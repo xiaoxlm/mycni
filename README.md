@@ -28,7 +28,7 @@ Please see [here](https://github.com/gliderlabs/docker-alpine/issues/386#issueco
 ```yaml
     - name: kube-mycni
       image: mycni:v1.0
-      imagePullPolicy: Never # or IfNotPresent
+      imagePullPolicy: IfNotPresent # or Never
 ```
 
 the reference is [here](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy)

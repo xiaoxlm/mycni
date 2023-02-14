@@ -87,7 +87,7 @@ spec:
         # mycni image
         image: mycni:v1.0
         # 从本地拉取
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         command:
         - cp
         args:
@@ -114,7 +114,7 @@ spec:
       - name: kube-mycni
         image: mycni:v1.0
         # 从本地拉取
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         command:
         - /mycnid
         args:
