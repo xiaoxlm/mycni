@@ -86,6 +86,8 @@ spec:
       - name: install-cni-plugin
         # mycni image
         image: mycni:v1.0
+        # 从本地拉取
+        imagePullPolicy: Never
         command:
         - cp
         args:
@@ -111,6 +113,8 @@ spec:
       containers:
       - name: kube-mycni
         image: mycni:v1.0
+        # 从本地拉取
+        imagePullPolicy: Never
         command:
         - /mycnid
         args:

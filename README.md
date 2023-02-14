@@ -16,10 +16,19 @@ Network architecture:
 `make deploy` or `kubectl apply -f deploy/mycni.yaml`
 
 ## Debugs
-`apk update` may failed in Dockerfile:
+1. `apk update` may failed in Dockerfile:
 ```shell
 ERROR: https://dl-cdn.alpinelinux.org/alpine/v3.17/main: temporary error (try again later)
 WARNING: Ignoring https://dl-cdn.alpinelinux.org/alpine/v3.17/main: No such file or directory
 ```
 
 Please see [here](https://github.com/gliderlabs/docker-alpine/issues/386#issuecomment-376523853)
+
+2. When use local image, please change imagePullPolicy:
+```yaml
+    - name: kube-mycni
+      image: mycni:v1.0
+      imagePullPolicy: Never # or IfNotPresent
+```
+
+the reference is [here](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy)
